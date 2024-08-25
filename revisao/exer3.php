@@ -1,6 +1,11 @@
 <?php 
+require_once '..\config.php';
 
-require("cabecalho.php");
+use Config\Config;
+
+Config::get_header();
+
+
 $erro = "Selecione um valor válido";
 $resultado = null;
 function bonificacaoFuncionario($nome_funcionario, $valor_recebimento, $valor_bonus) {
@@ -64,4 +69,6 @@ if($_POST) {
     <?php echo '<div class="row"> R$'. $resultado .'</div>'; ?>
 </div>
 </form>
-<?php require("rodape.php"); ?>
+<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
+
+<?php Config::get_footer(); ?>

@@ -1,4 +1,8 @@
-<?php require('cabecalho.php'); ?>
+<?php require_once '..\config.php';
+
+use Config\Config;
+
+Config::get_header(); ?>
 <div class="container mt-5">
     <h1>Avaliação de Desempenho do Projeto</h1>
     <form method="post" action="">
@@ -61,4 +65,8 @@
     }
     ?>
 </div>
-<?php require('rodape.php'); ?>
+<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
+
+<?php 
+
+Config::get_footer();?>

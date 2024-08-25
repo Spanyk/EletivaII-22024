@@ -1,4 +1,8 @@
-<?php require('cabecalho.php'); ?>
+<?php require_once '..\config.php';
+
+use Config\Config;
+
+Config::get_header(); ?>
 
 
 <div class="container mt-5">
@@ -41,5 +45,6 @@
     }
     ?>
 </div>
+<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
 
-<?php require('rodape.php'); ?>
+<?php Config::get_footer(); ?>

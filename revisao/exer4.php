@@ -1,9 +1,13 @@
-<?php require('cabecalho.php');
+<?php require_once '..\config.php';
+
+use Config\Config;
+
+Config::get_header();
 
 if ($_POST) {
     // Atribuição dos dados referentes a abertura da tarefa
     $descricao_tarefa = $_POST['nome_tarefa'];
-    $total_hora_tarefa = $_POST['total_hora_tarefa'];
+    $tempo_tarefa = (float) $_POST['total_hora_tarefa'];
     $complexidade_tarefa = $_POST['complexidade_tarefa'];
 
     // Atribuição dos dados do funcionário
@@ -12,14 +16,26 @@ if ($_POST) {
     $nivel_experiencia = $_POST['nivel_experiencia'];
 
     $funcionario = Funcionario($nome_funcionario, $hora_disponivel_funcionario, $nivel_experiencia);
-    $resultado = atribuirTarefa($descricao_tarefa, $total_hora_tarefa, $complexidade_tarefa, $funcionario);
+    
+    if (!is_array($funcionario)) return $funcionario;
+
+    if ($funcionario['Disponibilidade'] >= $tempo_tarefa * 1.0) {
+        if($funcionario['nome']['Junior'] &&  $funcionario['Junior']['Complexidade'] == 'baixa');
+        return '<p>Funcionário'. $funcionario['nome'] .' não possui tempo suficiente';
+    } 
+
+    $nivel = $funcionario['nome'];
+    $complexidades_permitidas = $funcionario['Tarefa']['Complexidade'];
+
+ 
 }
 
 function Funcionario($nome, $disponibilidade, $nivel) {
     $data_funcionario = [
+        'nome' => $nome,
         'Junior' => [
             'Tarefa' => [
-                'Complexidade' => ['Baixa']
+                'Complexidade' => ['Baixa'] == $nivel
             ],
             'Disponibilidade' => $disponibilidade
         ],
@@ -37,37 +53,10 @@ function Funcionario($nome, $disponibilidade, $nivel) {
         ]
     ];
 
-    if (array_key_exists($nivel, $data_funcionario)) {
-        $data_funcionario[$nivel]['nome'] = $nome;
-        return $data_funcionario[$nivel];
-    } else {
-        return 'Nível de experiência inválido';
-    }
-}
-
-function atribuirTarefa($tarefa, $tempo_tarefa, $complexidade, $funcionario) {
-    if (!is_array($funcionario)) return $funcionario;
-
-    if ($funcionario['Disponibilidade'] < $tempo_tarefa) {
-        return 'Funcionário não possui tempo suficiente';
-    }
-
-    $nivel = $funcionario['nome'];
-    $complexidades_permitidas = $funcionario['Tarefa']['Complexidade'];
-
-    // Check if complexity is allowed for the employee's level
-    if (is_array($complexidades_permitidas)) {
-        if (in_array($complexidade, $complexidades_permitidas)) {
-            return "Tarefa atribuída com sucesso.";
-        } else {
-            return "Complexidade da tarefa não permitida para o nível do funcionário.";
-        }
-    } else {
-        return "Nível do funcionário inválido.";
-    }
+    return $data_funcionario;
 }
 ?>
-
+<h2>Exercicio 4</h2> 
 <form action="Exer4.php" method="post">
     <div class="row">
         <div class="col">
@@ -99,6 +88,7 @@ function atribuirTarefa($tarefa, $tempo_tarefa, $complexidade, $funcionario) {
     </div>
     <button type="submit">Atribuir Tarefa</button> <!-- Added submit button -->
 </form>
+<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
 
 <?php if (isset($resultado)): ?>
     <div class="resultado">
@@ -106,4 +96,6 @@ function atribuirTarefa($tarefa, $tempo_tarefa, $complexidade, $funcionario) {
     </div>
 <?php endif; ?>
 
-<?php require('rodape.php'); ?>
+<?php 
+
+Config::get_footer();?>

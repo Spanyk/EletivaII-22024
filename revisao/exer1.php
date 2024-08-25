@@ -1,41 +1,55 @@
-<?php require("cabecalho.php");?>
-
-<h1> Exercício 1 </h1>
-<form action="exer1.php" method="POST">
-<div class="row">
-  <div class="col">
-    <label for="hora_entrada"> Hora Entrada</label>
-      <input type="time" name="hora_entrada" id="hora_entrada" class="form-control"/>
-  </div>
-  <div class="col">
-    <label> Hora de Saida </label>
-    <input type="time" id="hora_saida" name="hora_saida" class="form-control"/>
-  </div>
-</div>
-<div class="row">
-  <div class="col">
-    <button type="submit" class="btn btn-success m-1">Calcular</button>
-  </div>
-</div>
-</form>
 <?php
-  if($_POST) {
-    $hora_entrada = $_POST['hora_entrada'];
-    $hora_saida = $_POST['hora_saida'];
+require_once '..\config.php';
 
-    echo calcularTempo($hora_entrada, $hora_saida); 
-  }
+use Config\Config;
 
-  function calcularTempo($hora_entrada, $hora_saida) {
-    $hora_entrada = new DateTime($hora_entrada);
-    $hora_saida = new Datetime($hora_saida);
-    $resultado =  $hora_saida->diff($hora_entrada);
-    $resultado = $resultado->format("%H:%M");
-    return $resultado;
-  }
+Config::get_header();
+
+
+?>
 
 
 
+<form action="exer1.php" method="POST">
+  <div class="row m-4">
+    <h1> Exercício 1 </h1>
+    <div class="col-md-8">
+      <label for="hora_entrada"> Hora Entrada</label>
+      <input type="time" name="hora_entrada" id="hora_entrada" class="form-control" />
+    </div>
+    <div class="col-md-4">
+      <label> Hora de Saida </label>
+      <input type="time" id="hora_saida" name="hora_saida" class="form-control" />
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button type="submit" class="btn btn-success m-1" name="btn-submit" id="btn-submit">
+        CALCULAR
+      </button>
+    </div>
+</form>
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Resultado</h5>
+  </div>
+  <div class="modal-body ">
 
- require("rodape.php");
+    <?php if (isset($_POST['btn-submit'])) {
+      $hora_incial = new DateTime($_POST['hora_entrada']);
+      $hora_final = new DateTime($_POST['hora_saida']);
+      
+      $diferenca = $hora_final->diff($hora_incial);
+      echo "Diferença de horário: " . $diferenca->format("%h:%I");
+    }
+
+    ?>
+  </div>
+
+</div>
+</div>
+
+<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
+
+<?php
+
+Config::get_footer();
 ?>
