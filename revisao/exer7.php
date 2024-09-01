@@ -22,7 +22,7 @@ Config::get_header(); ?>
             <label for="produtividade">Atividades por Dia:</label>
             <input type="number" class="form-control" id="produtividade" name="produtividade" required>
         </div>
-        <button type="submit" class="btn btn-primary">Avaliar Desempenho</button>
+        <button type="submit" class="btn btn-primary mt-3">Avaliar Desempenho</button>
     </form>
 
     <?php
@@ -65,8 +65,12 @@ Config::get_header(); ?>
     }
     ?>
 </div>
-<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
 
+<div class="mt-3">
+  <a href="../main.php" class="btn btn-secondary">
+    <i class="fas fa-arrow-left me-2"></i>Voltar
+  </a>
+</div>
 <?php 
 
 Config::get_footer();?>

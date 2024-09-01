@@ -20,7 +20,7 @@ Config::get_header(); ?>
             <label for="custosAdicionais">Custos Adicionais (R$):</label>
             <input type="number" step="0.01" class="form-control" id="custosAdicionais" name="custosAdicionais" required>
         </div>
-        <button type="submit" class="btn btn-primary">Calcular Custo Total</button>
+        <button type="submit" class="btn btn-primary mt-3">Calcular Custo Total</button>
     </form>
 
     <?php
@@ -45,6 +45,10 @@ Config::get_header(); ?>
     }
     ?>
 </div>
-<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
 
+<div class="mt-3">
+  <a href="../main.php" class="btn btn-secondary">
+    <i class="fas fa-arrow-left me-2"></i>Voltar
+  </a>
+</div>
 <?php Config::get_footer(); ?>

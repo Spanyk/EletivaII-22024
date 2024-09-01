@@ -24,13 +24,17 @@ Config::get_header(); ?>
         $diasFerias = min(floor($diasTrabalhados / 30), 30);
 
         echo "<div class='mt-4'>";
-        echo "<h3>Resultados:</h3>";
+        echo "<h4>Resultados:</h4>";
         echo "<p>Funcionário trabalhou: <strong>$diasTrabalhados</strong> dias</p>";
         echo "<p>Dias de férias a que tem direito: <strong>$diasFerias</strong> dias</p>";
         echo "</div>";
     }
     ?>
 </div>
-<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
 
+<div class="mt-3">
+  <a href="../main.php" class="btn btn-secondary">
+    <i class="fas fa-arrow-left me-2"></i>Voltar
+  </a>
+</div>
 <?php Config::get_footer(); ?>
