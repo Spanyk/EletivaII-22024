@@ -44,7 +44,6 @@ Config::get_header();
                         <li class="list-group-item"><a href="revisao-poo\exer1.php">Exercicio 1 </a></li>
                         <li class="list-group-item"><a href="revisao-poo\exer2.php">Exercicio 2 </a></li>
                         <li class="list-group-item"><a href="revisao-poo\exer3.php">Exercicio 3 </a></li>
-                   
                     </ol>
                     </p>
                 </div>

@@ -13,3 +13,5 @@ Este repositório contém os projetos desenvolvidos para a disciplina de Eletiva
 - Bootstrap: Para estilização e design responsivo das interfaces.
 
 - Consumo de API: Para integração com serviços externos e manipulação de dados.
+php artisan config:cache
+php artisan cache:clear
