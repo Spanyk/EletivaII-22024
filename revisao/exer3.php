@@ -70,7 +70,7 @@ if($_POST) {
       <div class="col">
       <p> Nome: '. htmlspecialchars($nome_funcionario) .'</p>
       <p>Percentual de aumento: '. htmlspecialchars($op_valor) .'</p>
-      <p> Salario + Bonificação(R$):R$ '.htmlspecialchars($resultado) .' </p>    
+      <p> Salario + Bonificação(R$):R$ '.htmlspecialchars($resultado) .' </p>
       </div>    
     </div>'; ?>
 </div>
