@@ -22,7 +22,7 @@ Config::get_header();
       <input type="time" id="hora_saida" name="hora_saida" class="form-control" />
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button type="submit" class="btn btn-success m-1" name="btn-submit" id="btn-submit">
+      <button type="submit" class="btn btn-success mt-2 " name="btn-submit" id="btn-submit">
         CALCULAR
       </button>
     </div>
@@ -36,7 +36,7 @@ Config::get_header();
     <?php if (isset($_POST['btn-submit'])) {
       $hora_incial = new DateTime($_POST['hora_entrada']);
       $hora_final = new DateTime($_POST['hora_saida']);
-      
+
       $diferenca = $hora_final->diff($hora_incial);
       echo "Diferença de horário: " . $diferenca->format("%h:%I");
     }
@@ -47,8 +47,11 @@ Config::get_header();
 </div>
 </div>
 
-<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
-
+<div class="mt-3">
+  <a href="../main.php" class="btn btn-secondary">
+    <i class="fas fa-arrow-left me-2"></i>Voltar
+  </a>
+</div>
 <?php
 
 Config::get_footer();

@@ -68,19 +68,17 @@ if($_POST) {
 <div class="row p-5">
     <?php echo '<div class="row"> 
       <div class="col">
-      <h2> Atualizado <h2>
-      <div>
-        Nome: '. $nome_funcionario .'
-        Percentual de aumento:'. $op_valor .'
-        Valor da Bonificação:'. if(in_array($porcentBonificacao) == $op_valor) $porcentBonificacao.'
-        Salario + Bonificação(R$):R$'.$resultado .'
-      </div>
-      
-
+      <p> Nome: '. htmlspecialchars($nome_funcionario) .'</p>
+      <p>Percentual de aumento: '. htmlspecialchars($op_valor) .'</p>
+      <p> Salario + Bonificação(R$):R$ '.htmlspecialchars($resultado) .' </p>
       </div>    
     </div>'; ?>
 </div>
 </form>
-<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
 
+<div class="mt-3">
+  <a href="../main.php" class="btn btn-secondary">
+    <i class="fas fa-arrow-left me-2"></i>Voltar
+  </a>
+</div>
 <?php Config::get_footer(); ?>

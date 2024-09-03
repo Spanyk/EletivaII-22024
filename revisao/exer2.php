@@ -60,7 +60,11 @@ function calcularHoraTrabalhada($hr_trabalhada, $vl_hora) {
     </div>
 </div>
 </form>
-<div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
 
+<div class="mt-3">
+  <a href="../main.php" class="btn btn-secondary">
+    <i class="fas fa-arrow-left me-2"></i>Voltar
+  </a>
+</div>
 <?php
 Config::get_footer();?>
