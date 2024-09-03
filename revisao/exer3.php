@@ -13,8 +13,8 @@ function bonificacaoFuncionario($nome_funcionario, $valor_recebimento, $valor_bo
     '1' => 0.1,
     '2' => 0.2,
     '3' => 0.3,
-    '4' => 0.5,
-    '5' => 0.7
+    '4' => 0.4,
+    '5' => 0.5
   );
   $bonus = $valor_bonus; 
   foreach($porcentBonificacao as $key=> $index) {
@@ -66,7 +66,19 @@ if($_POST) {
     <div class="d-grid gap-2 col-6 mx-auto m-4">
       <button type="submit" class="btn btn-success">Calcular </button></div>
 <div class="row p-5">
-    <?php echo '<div class="row"> R$'. $resultado .'</div>'; ?>
+    <?php echo '<div class="row"> 
+      <div class="col">
+      <h2> Atualizado <h2>
+      <div>
+        Nome: '. $nome_funcionario .'
+        Percentual de aumento:'. $op_valor .'
+        Valor da Bonificação:'. if(in_array($porcentBonificacao) == $op_valor) $porcentBonificacao.'
+        Salario + Bonificação(R$):R$'.$resultado .'
+      </div>
+      
+
+      </div>    
+    </div>'; ?>
 </div>
 </form>
 <div class="btn-return"><a href="..\main.php"><i class="fa fa-plane" aria-hidden="true"></i>Voltar</a></div>
