@@ -63,7 +63,7 @@ function calcularHoraTrabalhada($hr_trabalhada, $vl_hora) {
 
 <div class="mt-3">
   <a href="../main.php" class="btn btn-secondary">
-    <i class="fas fa-arrow-left me-2"></i>Voltar
+    <i class="fa-solid fa-house me-2"></i>Voltar
   </a>
 </div>
 <?php

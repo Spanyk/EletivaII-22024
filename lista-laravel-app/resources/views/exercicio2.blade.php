@@ -12,6 +12,7 @@
     <div class="container-sm">
         <form class="row g-3 mt-4" action="/resultado-exercicio-2" method="POST">
             @CSRF
+            @method('GET')
             <div class="col-md-6">
                 <div class="form-floating mb-3">
                     <input type="number" name="valor1" id="valor1" class="form-control" placeholder="Digite um número (0-9)">
@@ -26,7 +27,7 @@
             </div>
             <div class="mt-3">
                 <button type="submit" class="btn btn-success">Enviar</button>
-                <a href="{{ url('/') }}" class="btn btn-secondary"><i class="fas fa-arrow-left me-2"></i>Voltar</a>
+                <a href="{{ url('/') }}" class="btn btn-secondary"><i class="fa-solid fa-house me-2"></i>Voltar</a>
             </div>
         </form>
     </div>
