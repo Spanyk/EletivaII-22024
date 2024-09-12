@@ -11,11 +11,23 @@ class ListaExercicioController extends Controller
         'exercicio2' => 'exercicio2',
         'exercicio3' => 'exercicio3',
         'exercicio4' => 'exercicio4',
+        'exercicio5' => 'exercicio5',
+        'exercicio6' => 'exercicio6',
+        'exercicio7' => 'exercicio7',
+        'exercicio8' => 'exercicio8',
+        'exercicio9' => 'exercicio9',
+        'exercicio10' => 'exercicio10',
+        'exercicio11' => 'exercicio11',
+        'exercicio12' => 'exercicio12',
+        'exercicio13' => 'exercicio13',
+        'exercicio14' => 'exercicio14',
+        'exercicio15' => 'exercicio15',
+        'exercicio16' => 'exercicio16',
+        'exercicio17' => 'exercicio17',
+        'exercicio18' => 'exercicio18',
+        'exercicio19' => 'exercicio19',
+        'exercicio20' => 'exercicio20',
     ];
-
-    // public function mostrarExercicio2() {
-    //     return view('exercicio2');
-    // }
 
     public function mostrarExercicio($viewKey) {
         if (array_key_exists($viewKey, $this->views)) {
@@ -24,7 +36,18 @@ class ListaExercicioController extends Controller
             abort(404, 'View não encontrada');
         }
     }
+    
+    public function calcularMedia(Request $request) {
+     
+        $nota1 = $request->input('nota1');
+        $nota2 = $request->input('nota2');
+        $nota3 = $request->input('nota3');
 
+        $media = ($nota1 + $nota2 + $nota3) / 3;
+
+        return 'Resultado da média do Aluno é: '. $media;
+
+    }
 
     public function subtrair(Request $request) {
         $valor1 = $request->input('valor1');
@@ -50,5 +73,21 @@ class ListaExercicioController extends Controller
         } else {
             return 'Não é possível realizar uma divisão por zero';
         }
+    }
+// Exercicio 6
+    public function conversorTemperaturaParaFahrenheit(Request $request) {
+        $celsius = $request->input('celsius');
+
+        $convertido = ($celsius * 1.8) + 32; 
+
+        return 'Temperatu Convertida para Fahrenheit -> '. $convertido;
+    }
+// Exercicio 7 
+    public function conversorTemperaturaParaCelcius(Request $request) {
+        $fahrenheit = $request->input('Fahrenheit');
+
+        $convertido = ($fahrenheit - 32) / 1.8; 
+
+        return 'Temperatura Convertida para Celcius -> '. $convertido;
     }
 }

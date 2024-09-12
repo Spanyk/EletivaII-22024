@@ -10,7 +10,6 @@
 
 <body>
     <div class="container-sm">
-    <div class="container-sm">
         <h2>Exercicio 4</h2>
         <form class="row g-3 mt-4" action="/resultado-exercicio-4" method="POST">
             @CSRF
@@ -29,7 +28,7 @@
             </div>
             <div class="mt-3">
                 <button type="submit" class="btn btn-success">Enviar</button>
-                <a href="{{ url('/') }}" class="btn btn-secondary"><i class="fas fa-arrow-left me-2"></i>Voltar</a>
+                <a href="{{ url('/') }}" class="btn btn-secondary"><i class="fa-solid fa-house me-2"></i>Voltar</a>
             </div>
         </form>
     </div>
