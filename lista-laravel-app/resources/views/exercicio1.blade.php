@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Exercicio 6</title>
+    <title>Exercicio 1</title>
     <style>
         .exercicio {
             width: 3em;
@@ -38,25 +36,27 @@
 </head>
 
 <body>
-    <div class="container-sm border mt-4">
-        <div class="exercicio">8</div>
-        <span class="text-center"><p class="fw-bold fs-4 text mt-4">Conversor de Temperatura</p></span>
-        
-        <form class="row g-3 mt-4" action="/resultado-exercicio-8" method="POST">
+<div class="container-sm border mt-4">
+<div class="exercicio">1</div>
+<span class="text-center"><p class="fw-bold fs-4 text mt-4"> Somar </p></span>
+
+        <form class="row g-3 mt-4" action="/resultado-exercicio-1" method="POST">
             @CSRF
             @method('GET')
-            <div class="col-sm-6">
+            <div class="col-md-12">
                 <div class="form-floating mb-3">
-                <input type="number" name="TEMP1" id="TEMP1" class="form-control">
-                    <label for="fahrenheit" class="form-label">Temperatura:</label>
+                    <input type="text" name="valor1" id="valor1" class="form-control" placeholder="Digite um número (0-9)">
+                    <label for="valor1" class="form-label">Número 1 </label>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-12 text-center"><p class="text fw-bold fs-2">+</p></div>
+            <div class="col-md-12">
                 <div class="form-floating mb-3">
-                <input type="number" name="TEMP2" id="TEMP2" class="form-control">
-                    <label for="TEMP2" class="form-label">Temperatura:</label>
+                    <input type="text" name="valor2" id="valor2" class="form-control" placeholder="Digite um número inteiro..(0-9)">
+                    <label for="valor2" class="form-label">Número 2 </label>
                 </div>
             </div>
+            
             <div class="row g-2 mb-4 p-2">
                 <div class="col-sm-6 d-grid ">
                     <a href="{{ url('/') }}" class="btn btn-primary"><i class="fa-solid fa-house me-2"></i></a>
