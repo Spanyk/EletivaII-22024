@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Exercicio 6</title>
+    <title>Exercicio 8</title>
     <style>
         .exercicio {
             width: 3em;
@@ -40,21 +40,21 @@
 <body>
     <div class="container-sm border mt-4">
         <div class="exercicio">8</div>
-        <span class="text-center"><p class="fw-bold fs-4 text mt-4">Conversor de Temperatura</p></span>
+        <span class="text-center"><p class="fw-bold fs-4 text mt-4">Calculo de Area: Triangulo </p></span>
         
         <form class="row g-3 mt-4" action="/resultado-exercicio-8" method="POST">
             @CSRF
             @method('GET')
             <div class="col-sm-6">
                 <div class="form-floating mb-3">
-                <input type="number" name="TEMP1" id="TEMP1" class="form-control">
-                    <label for="fahrenheit" class="form-label">Temperatura:</label>
+                <input type="number" name="altura" id="altura" class="form-control">
+                    <label for="altura" class="form-label">Altura:</label>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-floating mb-3">
-                <input type="number" name="TEMP2" id="TEMP2" class="form-control">
-                    <label for="TEMP2" class="form-label">Temperatura:</label>
+                <input type="number" name="largura" id="largura" class="form-control">
+                    <label for="largura" class="form-label">Largura:</label>
                 </div>
             </div>
             <div class="row g-2 mb-4 p-2">
@@ -76,3 +76,4 @@
 </body>
 
 </html>
+

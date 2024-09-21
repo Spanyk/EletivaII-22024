@@ -17,22 +17,27 @@
 
         }
 
-        body {
+        /* body {
             background-color: #202020;
+        } */
+        .container-sm {
+            max-width: 740px;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+            border-radius: 4px;
         }
     </style>
 </head>
 
 <body>
 
-    <main class="container mt-4 border border-info" style="max-width: 30rem; border-radius: 8px; background-color: #fff; ">
-        <h4 class="display-6 font-weight-bold text-center mt-4">Menu de Exercicios</h4>
+    <main class="container-sm mt-4 border border-info" style="max-width: 30rem; border-radius: 2px; background-color: #fff; ">
+        <h4 class="display-6 font-weight-bold text-center mt-4">Menu de Exercícios</h4>
         <hr>
         <div class="row p-2 d-flex justify-content-center ">
             <div class="col-md-6">
                 <ol class="list-group list-group-light text-center ">
                     <li class="list-group-item p-6" style="background-color: #96a0aa; ">
-                        <i class="fa-solid fa-arrow-right"></i>
+             
                         <a href="{{ url('/exercicio/exercicio1') }}">Exercicio 1</a>
                     </li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio2') }}">Exercicio 2</a></li>
