@@ -13,6 +13,9 @@ Route::get('/', function () {
 Route::get('/form', [FormController::class, 'mostrarForm', 'receberValor']);
 Route::get('/processarForm', [FormController::class,  'receberValor']);
 
+Route::post('/exercicio/{exercicio1}', [ListaExercicioController::class,'mostrarExercicio', 'somar']);
+Route::get('/resultado-exercicio-1', [ListaExercicioController::class, 'somar']);
+// Testando método match()
 Route::post('/exercicio/{exercicio2}', [ListaExercicioController::class,'mostrarExercicio', 'subtrair']);
 Route::match(['get'],'/resultado-exercicio-2', [ListaExercicioController::class, 'subtrair']);
 // Testando método match()
