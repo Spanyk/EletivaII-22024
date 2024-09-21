@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class ListaExercicioController extends Controller 
 {
     protected $views = [
+"",     'exercicio1' => 'exercicio1',
         'exercicio2' => 'exercicio2',
         'exercicio3' => 'exercicio3',
         'exercicio4' => 'exercicio4',
@@ -47,6 +48,13 @@ class ListaExercicioController extends Controller
 
         return 'Resultado da média do Aluno é: '. $media;
 
+    }
+
+    public function somar(Request $request) {
+        $valor1 = $request->input('valor1');
+        $valor2 = $request->input('valor2');
+        $resultado = $valor2 + $valor1;
+        return 'Resultado da soma: '. $resultado;
     }
 
     public function subtrair(Request $request) {
