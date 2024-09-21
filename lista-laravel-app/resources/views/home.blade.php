@@ -14,11 +14,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 18px;
             color: #121212;
-            
+
         }
 
-        body { 
-            background-color: #202020;    
+        body {
+            background-color: #202020;
         }
     </style>
 </head>
@@ -32,30 +32,31 @@
             <div class="col-md-6">
                 <ol class="list-group list-group-light text-center ">
                     <li class="list-group-item p-6" style="background-color: #96a0aa; ">
-                    <i class="fa-solid fa-arrow-right"></i>
-                    <a href="{{ url('/form') }}">Exercicio 1</a></li>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <a href="{{ url('/exercicio/exercicio1') }}">Exercicio 1</a>
+                    </li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio2') }}">Exercicio 2</a></li>
-                    <li class="list-group-item"style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio3') }}">Exercicio 3</a></li>
+                    <li class="list-group-item" style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio3') }}">Exercicio 3</a></li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio4') }}">Exercicio 4</a></li>
-                    <li class="list-group-item"style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio5') }}">Exercicio 5</a></li>
+                    <li class="list-group-item" style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio5') }}">Exercicio 5</a></li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio6') }}">Exercicio 6</a></li>
-                    <li class="list-group-item"style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio7') }}">Exercicio 7</a></li>
+                    <li class="list-group-item" style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio7') }}">Exercicio 7</a></li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio8') }}">Exercicio 8</a></li>
-                    <li class="list-group-item"style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio9') }}">Exercicio 9</a></li>
+                    <li class="list-group-item" style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio9') }}">Exercicio 9</a></li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio10') }}">Exercicio 10</a></li>
                 </ol>
             </div>
             <div class="col-md-6 mb-2">
                 <ol class="list-group list-group-light center text-center">
-                    <li class="list-group-item"style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio11') }}">Exercicio 11</a></li>
+                    <li class="list-group-item" style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio11') }}">Exercicio 11</a></li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio12') }}">Exercicio 12</a></li>
-                    <li class="list-group-item"style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio13') }}">Exercicio 13</a></li>
+                    <li class="list-group-item" style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio13') }}">Exercicio 13</a></li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio14') }}">Exercicio 14</a></li>
-                    <li class="list-group-item"style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio15') }}">Exercicio 15</a></li>
+                    <li class="list-group-item" style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio15') }}">Exercicio 15</a></li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio16') }}">Exercicio 16</a></li>
-                    <li class="list-group-item"style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio17') }}">Exercicio 17</a></li>
+                    <li class="list-group-item" style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio17') }}">Exercicio 17</a></li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio18') }}">Exercicio 18</a></li>
-                    <li class="list-group-item"style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio19') }}">Exercicio 19</a></li>
+                    <li class="list-group-item" style="background-color: #96a0aa;"><a href="{{ url('exercicio/exercicio19') }}">Exercicio 19</a></li>
                     <li class="list-group-item"><a href="{{ url('exercicio/exercicio20') }}">Exercicio 20</a></li>
                 </ol>
             </div>
