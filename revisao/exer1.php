@@ -9,7 +9,6 @@ Config::get_header();
 ?>
 
 
-
 <form action="exer1.php" method="POST">
   <div class="row m-4">
     <h1> Exercício 1 </h1>
@@ -32,15 +31,14 @@ Config::get_header();
     <h5 class="modal-title">Resultado</h5>
   </div>
   <div class="modal-body ">
-
-    <?php if (isset($_POST['btn-submit'])) {
-      $hora_incial = new DateTime($_POST['hora_entrada']);
-      $hora_final = new DateTime($_POST['hora_saida']);
-
-      $diferenca = $hora_final->diff($hora_incial);
-      echo "Diferença de horário: " . $diferenca->format("%h:%I");
-    }
-
+    <?php 
+        if (isset($_POST['btn-submit'])) {
+          $hora_incial = new DateTime($_POST['hora_entrada']);
+          $hora_final = new DateTime($_POST['hora_saida']);
+    
+          $diferenca = $hora_final->diff($hora_incial);
+          echo "Diferença de horário: " . $diferenca->format("%h:%I");
+        }
     ?>
   </div>
 

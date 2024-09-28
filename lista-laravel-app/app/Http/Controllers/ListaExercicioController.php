@@ -39,7 +39,7 @@ class ListaExercicioController extends Controller
             abort(404, 'View não encontrada');
         }
     }
-    
+
     public function calcularMedia(Request $request)
     {
 
@@ -95,7 +95,7 @@ class ListaExercicioController extends Controller
 
         $convertido = ($celsius * 1.8) + 32;
 
-        return 'Temperatu Convertida para Fahrenheit -> ' . $convertido;
+        return 'Temperatura Convertida para Fahrenheit: ' . $convertido;
     }
     // Exercício 7 
     public function conversorTemperaturaParaCelcius(Request $request)
@@ -104,73 +104,142 @@ class ListaExercicioController extends Controller
 
         $convertido = ($fahrenheit - 32) / 1.8;
 
-        return 'Temperatura Convertida para Celcius -> ' . $convertido;
+        return 'Temperatura Convertida para Celcius:' . $convertido;
     }
     // Exercício 8
     public function calcularAreaRetangulo(Request $request)
     {
-        //
+        $h = $request->input('altura');
+        $b = $request->input('largura');
+
+        $area = $b * $h;
+        return 'A area do retangulo é: ' . $area . "cm";
     }
 
     // Exercício 9
     public function calcularAreaCirculo(Request $request)
     {
-        //
+        $raio = $request->input('raio');
+        $pi = 3.14;
+        $area = $pi  * pow($raio, 2);
+
+        return 'A area do circulo é: ' . $area . "cm&#xB2";
     }
 
     // Exercício 10
     public function calcularPerimetroRetangulo(Request $request)
     {
-        //
+        $h = $request->input('altura');
+        $b = $request->input('largura');
+
+        $perimetro = 2 * ($b + $h);
+        return 'O perimetro do retangulo é: ' . $perimetro . "cm";
     }
     // Exercício 11
     public function calcularPerimetroRaio(Request $request)
     {
-        //
+        $raio = $request->input('raio');
+        $pi = 3.14;
+        $perimetro = 2 * $pi  * $raio;
+
+        return 'A perimetro do circulo é: ' . $perimetro . "cm&#xB2";
     }
     // Exercício 12
     public function calcularExpoente(Request $request)
     {
-        //
+        $base = $request->input("base");
+        $expoente = $request->input("expoente");
+
+        $resultado =  pow($base, $expoente); // $base ** $expoente;
+
+        return 'O resultado é: ' . $resultado . '';
     }
     // Exercício 13
     public function conversorCentimetros(Request $request)
     {
-        //
+        $m = $request->input('metros');
+        $c = $m * 100;
+
+        return 'Convertendo ' . $m . 'm' . ' em Centimetros: ' . $c . 'cm';
     }
     // Exercício 14
     public function conversorMilhas(Request $request)
     {
-        //
+        $km = $request->input('km');
+        $milhas = $km / 1.609344;
+
+        return "Convertendo " . $km . "Km em milhas fica: " . number_format($milhas, 6, '.', '') . " milhas";
     }
     // Exercício 15
     public function calcularIMC(Request $request)
     {
-        //
+
+        $peso = $request->input("peso");
+        $altura = $request->input("altura");
+
+        $imc = $peso / pow($altura, 2);
+
+        return "O calculo do IMC deu " . $imc;
     }
     // Exercício 16
     public function calcularDesconto(Request $request)
     {
-        //
+        $preco = $request->input("preco");
+        $percentual = $request->input("percentual");
+
+        $desconto = $preco * ($percentual / 100);
+
+        $precoFinal = $preco - $desconto;
+
+        return "O Preço final com desconto ficou" . $precoFinal;
     }
     // Exercício 17
-    public function calcularJurosSimples(Request $request)
-    {
-        //
+    public function calcularJurosSimples(Request $request) {
+        $capital = $request->input("capital");
+        $taxa = $request->input("taxa");
+        $periodo = $request->input("periodo");
+
+        $jurosSimples = ($capital * $taxa * $periodo);
+        return [
+            "Resultado" => $jurosSimples
+        ];
     }
     // Exercício 18
     public function calcularJurosCompostos(Request $request)
     {
-        //
+        $capital = $request->input("capital");
+        $taxa = $request->input("taxa");
+        $periodo = $request->input("periodo");
+
+        $jurosCompostos = ($capital * (1+$taxa)^$periodo);
+        return [
+            "Resultado" => $jurosCompostos
+        ];
     }
     // Exercício 19
     public function conversorDateTime(Request $request)
     {
-        //
+        $dias = $request->input("dia");
+
+        $segundos = $dias * 24 * 60 * 60;
+
+        $horas = floor($segundos / 3600); 
+        $minutos = floor($horas*60);
+        $segundosRestantes = $minutos * 60; 
+
+        return [
+            'horas' => $horas,
+            'minutos' => $minutos,
+            'segundos' => $segundosRestantes
+        ];
     }
     // Exercício 20
     public function calcularVelocidadeMedia(Request $request)
     {
-        //
+        $distancia = $request->input("distancia");
+        $tempo = $request->input("temppo");
+
+        $velocidadeMedia = $distancia / $tempo;
+        return "A velocidade media perconrrendo" . $distancia . " distancia, em " . $tempo . "é " . $velocidadeMedia;
     }
 }
