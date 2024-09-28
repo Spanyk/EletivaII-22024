@@ -1,16 +1,23 @@
-## Repositório de Projetos - Disciplina de Eletiva de Programação Web
+# Programação WEB - PHP + Laravel
 
-Este repositório contém os projetos desenvolvidos para a disciplina de Eletiva de Programação Web. Os projetos utilizam as seguintes tecnologias:
+<p> Este repositório contém os exercicios realizados em sala para relembrar como o PHP + POO funciona </p>
 
-- PHP (PDO): Para gerenciamento de banco de dados e operações de backend.
-
-- React.js: Para a construção de interfaces de usuário dinâmicas e reativas.
-
-- Composer: Para gerenciamento de dependências PHP.
-
-- Angular: Para desenvolvimento de aplicações web robustas e escaláveis.
-
-- Bootstrap: Para estilização e design responsivo das interfaces.
-
-- Consumo de API: Para integração com serviços externos e manipulação de dados.
-
+<div>
+    <ul>
+        <li> Lista 1 - PHP </li>
+        <li> Lista 2 - PHP + POO </li>
+        <li> Lista 3 - Entendendo o Laravel </li>
+    <ul>
+</div>
+<br>
+<div>
+    <h2> Projeto: Sistema de Controle de  Plantio Comunitário </h2>
+    <p> <strong>Escopo:</strong> Gerenciamento de áreas de plantio comunitário, onde moradores podem cultivar em terrenos compartilhados </p>
+    <ul>
+        <li>RF1: CRUD para cadastro de terrenos.</li>
+        <li> RF2: CRUD para cadastro de moradores.</li>
+        <li> RF3: CRUD para cadastro de espécies de plantas </li>cultivadas.
+        <li>RF4: Registrar plantios, relacionando moradores, terrenos e espécies (registre a data de
+início e data de fim).</li>
+</ul>
+</div>
