@@ -34,8 +34,8 @@ Route::get('/resultado-exercicio-6', [ListaExercicioController::class, 'converso
 Route::post('/exericio/{exercicio7}', [ListaExercicioController::class, 'mostrarExercicio', 'conversorTemperaturaParaCelcius']);
 Route::get('/resultado-exercicio-7', [ListaExercicioController::class, 'conversorTemperaturaParaCelcius']);
 
-Route::post('/exericio/{exercicio8}', [ListaExercicioController::class, 'mostrarExercicio', 'calcularAreaTriangulo']);
-Route::get('/resultado-exercicio-8', [ListaExercicioController::class, 'calcularAreaTriangulo']);
+Route::post('/exericio/{exercicio8}', [ListaExercicioController::class, 'mostrarExercicio', 'calcularAreaRetangulo']);
+Route::get('/resultado-exercicio-8', [ListaExercicioController::class, 'calcularAreaRetangulo']);
 
 Route::post('/exericio/{exercicio9}', [ListaExercicioController::class, 'mostrarExercicio', 'calcularAreaCirculo']);
 Route::get('/resultado-exercicio-9', [ListaExercicioController::class, 'calcularAreaCirculo']);
