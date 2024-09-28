@@ -1,14 +1,15 @@
-<?php 
+<?php
 
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ListaExercicioController extends Controller 
+class ListaExercicioController extends Controller
 {
     protected $views = [
-"",     'exercicio1' => 'exercicio1',
+        "",
+        'exercicio1' => 'exercicio1',
         'exercicio2' => 'exercicio2',
         'exercicio3' => 'exercicio3',
         'exercicio4' => 'exercicio4',
@@ -30,7 +31,8 @@ class ListaExercicioController extends Controller
         'exercicio20' => 'exercicio20',
     ];
 
-    public function mostrarExercicio($viewKey) {
+    public function mostrarExercicio($viewKey)
+    {
         if (array_key_exists($viewKey, $this->views)) {
             return view($this->views[$viewKey]);
         } else {
@@ -38,64 +40,137 @@ class ListaExercicioController extends Controller
         }
     }
     
-    public function calcularMedia(Request $request) {
-     
+    public function calcularMedia(Request $request)
+    {
+
         $nota1 = $request->input('nota1');
         $nota2 = $request->input('nota2');
         $nota3 = $request->input('nota3');
 
         $media = ($nota1 + $nota2 + $nota3) / 3;
 
-        return 'Resultado da média do Aluno é: '. $media;
-
+        return 'Resultado da média do Aluno é: ' . $media;
     }
 
-    public function somar(Request $request) {
+    public function somar(Request $request)
+    {
         $valor1 = $request->input('valor1');
         $valor2 = $request->input('valor2');
         $resultado = $valor2 + $valor1;
-        return 'Resultado da soma: '. $resultado;
+        return 'Resultado da soma: ' . $resultado;
     }
 
-    public function subtrair(Request $request) {
+    public function subtrair(Request $request)
+    {
         $valor1 = $request->input('valor1');
         $valor2 = $request->input('valor2');
         $resultado = $valor2 - $valor1;
-        return 'Resultado da subtração: '. $resultado;
+        return 'Resultado da subtração: ' . $resultado;
     }
 
-    public function multiplicar(Request $request) {
+    public function multiplicar(Request $request)
+    {
         $valor1 = $request->input('valor1');
         $valor2 = $request->input('valor2');
         $resultado = $valor1 * $valor2;
-        return 'Resultado da multiplicação: '. $resultado;
+        return 'Resultado da multiplicação: ' . $resultado;
     }
 
-    public function divisao(Request $request) {
+    public function divisao(Request $request)
+    {
         $valor1 = $request->input('valor1');
         $valor2 = $request->input('valor2');
 
         if ($valor1 != 0 and $valor2 != 0) {
             $resultado = $valor1 / $valor2;
-            return 'Resultado da divisão: '. $resultado;
+            return 'Resultado da divisão: ' . $resultado;
         } else {
             return 'Não é possível realizar uma divisão por zero';
         }
     }
-// Exercicio 6
-    public function conversorTemperaturaParaFahrenheit(Request $request) {
+    // Exercício 6
+    public function conversorTemperaturaParaFahrenheit(Request $request)
+    {
         $celsius = $request->input('celsius');
 
-        $convertido = ($celsius * 1.8) + 32; 
+        $convertido = ($celsius * 1.8) + 32;
 
-        return 'Temperatu Convertida para Fahrenheit -> '. $convertido;
+        return 'Temperatu Convertida para Fahrenheit -> ' . $convertido;
     }
-// Exercicio 7 
-    public function conversorTemperaturaParaCelcius(Request $request) {
+    // Exercício 7 
+    public function conversorTemperaturaParaCelcius(Request $request)
+    {
         $fahrenheit = $request->input('Fahrenheit');
 
-        $convertido = ($fahrenheit - 32) / 1.8; 
+        $convertido = ($fahrenheit - 32) / 1.8;
 
-        return 'Temperatura Convertida para Celcius -> '. $convertido;
+        return 'Temperatura Convertida para Celcius -> ' . $convertido;
+    }
+    // Exercício 8
+    public function calcularAreaRetangulo(Request $request)
+    {
+        //
+    }
+
+    // Exercício 9
+    public function calcularAreaCirculo(Request $request)
+    {
+        //
+    }
+
+    // Exercício 10
+    public function calcularPerimetroRetangulo(Request $request)
+    {
+        //
+    }
+    // Exercício 11
+    public function calcularPerimetroRaio(Request $request)
+    {
+        //
+    }
+    // Exercício 12
+    public function calcularExpoente(Request $request)
+    {
+        //
+    }
+    // Exercício 13
+    public function conversorCentimetros(Request $request)
+    {
+        //
+    }
+    // Exercício 14
+    public function conversorMilhas(Request $request)
+    {
+        //
+    }
+    // Exercício 15
+    public function calcularIMC(Request $request)
+    {
+        //
+    }
+    // Exercício 16
+    public function calcularDesconto(Request $request)
+    {
+        //
+    }
+    // Exercício 17
+    public function calcularJurosSimples(Request $request)
+    {
+        //
+    }
+    // Exercício 18
+    public function calcularJurosCompostos(Request $request)
+    {
+        //
+    }
+    // Exercício 19
+    public function conversorDateTime(Request $request)
+    {
+        //
+    }
+    // Exercício 20
+    public function calcularVelocidadeMedia(Request $request)
+    {
+        //
     }
 }
