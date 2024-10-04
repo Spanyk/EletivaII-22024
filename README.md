@@ -2,14 +2,11 @@
 
 <p> Este repositório contém os exercicios realizados em sala para relembrar como o PHP + POO funciona </p>
 
-<div>
-    * Lista 1 - PHP </h3>
-    * Lista 2 - PHP + POO </li>
-    * Lista 3 - Entendendo o Laravel <
-    
-</div>
+    <h3> Lista 1 - PHP </h3>
+    <h3> Lista 2 - PHP + POO</h3>
+    <h3> Lista 3 - Entendendo o Laravel</h3>
 <br>
-<h1 align="center" font-family> 
+<h1 align="center"> 
         <img src="./logo_projeto.png">
         <br>
         Projeto: Sistema de Controle de  Plantio Comunitário
