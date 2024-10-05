@@ -24,16 +24,14 @@ Config::get_header(); ?>
     </form>
 
     <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Captura os dados do formulário
+    if ($_POST) {
+  
         $horasPrevistas = (int)$_POST['horasPrevistas'];
         $taxaPorHora = (float)$_POST['taxaPorHora'];
         $custosAdicionais = (float)$_POST['custosAdicionais'];
 
-        // Cálculo do custo de mão de obra
         $custoMaoDeObra = $horasPrevistas * $taxaPorHora;
 
-        // Cálculo do custo total do projeto
         $custoTotalProjeto = $custoMaoDeObra + $custosAdicionais;
 
         echo "<div class='mt-4'>";
