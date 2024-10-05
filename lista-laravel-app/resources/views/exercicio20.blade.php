@@ -40,7 +40,7 @@
 <body>
     <div class="container-sm border mt-4">
         <div class="exercicio">20</div>
-        <span class="text-center"><p class="fw-bold fs-4 text mt-4">Conversor: Dias > Horas > Minutos > Segundos</p></span>
+        <span class="text-center"><p class="fw-bold fs-4 text mt-4">Calcular Velocidade Média</p></span>
         
         <form class="row g-3 mt-4" action="/resultado-exercicio-20" method="POST">
             @CSRF
