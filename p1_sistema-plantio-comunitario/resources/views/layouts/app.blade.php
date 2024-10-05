@@ -26,7 +26,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('terreno.create')}}">Novo Terreno</a></li>
                             <li><a class="dropdown-item" href="{{ route('terreno.index') }}">Listar Terreno</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
