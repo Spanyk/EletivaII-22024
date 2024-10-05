@@ -26,25 +26,24 @@ Config::get_header(); ?>
     </form>
 
     <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Captura os dados do formulário
+    if ($_POST) {
+
         $prazoFinalizacao = $_POST['prazoFinalizacao'];
         $totalAtividades = (int)$_POST['totalAtividades'];
         $atividadesDesenvolvidas = (int)$_POST['atividadesDesenvolvidas'];
         $produtividade = (int)$_POST['produtividade'];
 
-        // Cálculo do progresso
         $progresso = ($atividadesDesenvolvidas / $totalAtividades) * 100;
 
-        // Cálculo do tempo restante
+ 
         $dataAtual = new DateTime();
         $dataPrazo = new DateTime($prazoFinalizacao);
         $tempoRestante = $dataPrazo->diff($dataAtual)->days;
 
-        // Cálculo das atividades restantes
+   
         $atividadesRestantes = $totalAtividades - $atividadesDesenvolvidas;
 
-        // Cálculo do tempo necessário para concluir as atividades restantes
+
         $diasNecessarios = ceil($atividadesRestantes / $produtividade);
 
         echo "<div class='mt-4'>";
@@ -54,7 +53,7 @@ Config::get_header(); ?>
         echo "<p><strong>Atividades Restantes:</strong> " . $atividadesRestantes . "</p>";
         echo "<p><strong>Dias Necessários para Concluir:</strong> " . $diasNecessarios . " dias</p>";
 
-        // Avaliação se o projeto está dentro do prazo
+
         if ($diasNecessarios <= $tempoRestante) {
             echo "<p class='text-success'><strong>O projeto está dentro do prazo!</strong></p>";
         } else {
