@@ -6,7 +6,7 @@
         <h2 class="boorder mb-4">Novo Terreno</h2>
     </div>
     <div class="col-md-12">
-        <form action="{{ route('terreno.store')}}" class="form-control" method="put">
+        <form action="/terreno" class="form-control" method="POST">
             @csrf
             <div class="col-md-12">
                 <div class="form-floating mb-3">
