@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('terrenos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 100);
-            $table->string('localizacao', 255); 
-            $table->decimal('tamanho', 10, 2); 
-            $table->boolean('disponibilidade')->default(true);
-            $table->timestamps();
+        $table->string('localizacao');
+        $table->decimal('tamanho_m2', 8, 2);
+        $table->string('tipo_uso');
+        $table->unsignedBigInteger('morador_id');
+        $table->foreign('morador_id')->references('id')->on('moradores')->onDelete('cascade');
+        $table->string('status');
+        $table->timestamps();
        
         });
     }
