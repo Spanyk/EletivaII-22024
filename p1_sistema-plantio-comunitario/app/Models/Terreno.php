@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Morador; 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,4 +19,9 @@ class Terreno extends Model
     ];
 
     protected $primaryKey = 'id';
+
+    public function morador()
+    {
+        return $this->belongsTo(Morador::class);
+    }
 }
