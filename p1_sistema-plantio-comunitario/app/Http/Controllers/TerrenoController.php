@@ -25,19 +25,11 @@ class TerrenoController extends Controller
     }
 
  
+ 
     public function store(Request $request)
     {
-        $request->validate([
-            'nome'             => ['required', 'unique:terrenos'],
-            'localizacao'      => 'required|max:255',
-            'tamanho'          => ['nullable', 'decimal:10.2'],
-            'disponibilidade'  => 'nullable|boolean'
-        ]);
-  
         Terreno::create($request->all());
-
-        return redirect()->route('terreno.index')
-                         ->with('success', 'Terreno criado com sucesso');
+        return redirect("/terreno");   
     }
 
 
