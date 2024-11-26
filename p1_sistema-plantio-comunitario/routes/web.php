@@ -1,16 +1,20 @@
 <?php
 
-use App\Http\Controllers\TerrenoController;
-use App\Models\Terreno;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('/layouts/app');
+    return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('terreno', TerrenoController::class);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::get('/terreno/{id}/edit', [TerrenoController::class, 'edit'])->name('terreno.edit');
-
-Route::post('/terrenos/{terreno}', [TerrenoController::class, 'destroy'])->name('terreno.delete');
+require __DIR__.'/auth.php';
