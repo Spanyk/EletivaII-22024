@@ -12,7 +12,6 @@ class Terreno extends Model
     // Define os atributos de um modelo podem ser preenchidos em massa 
     // Operações de criação e atualização em massa, como no create() ou update()
     protected $fillable = [
-        'morador_id',
         'localizacao',
         'tamanho',
     ];

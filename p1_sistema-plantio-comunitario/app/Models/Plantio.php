@@ -21,7 +21,7 @@ class Plantio extends Model
         'status'
     ];
 
-    public function morador() {
+    public function moradors() {
         return $this->belongsTo(Morador::class);
     }
 

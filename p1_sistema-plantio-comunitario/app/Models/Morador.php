@@ -1,6 +1,7 @@
-use<?php
+<?php
 
 namespace App\Models;
+
 use App\Models\User; 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,7 +11,7 @@ class Morador extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',
+        'nome',
         'telefone',
         'endereco',
     ];
