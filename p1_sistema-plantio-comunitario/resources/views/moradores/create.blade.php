@@ -9,26 +9,20 @@
                 @csrf
                 <div class="col-md-12">
                     <div class="form-floating mb-3">
-                        <label for="user_id" class="form-label">Usuarios:</label>
-                <select name="user_id" class="form-select">
-                    @foreach ($users as $user)
-                        <option value="{{$user->id}}">{{$user->name}}</option>
-                    @endforeach
-                </select>
-                        <input type="text" name="endereco" id="endereco" class="form-control required">
-                        <label for="endereco" class="form-label">Endereço </label>
+                        <input type="text" name="nome" id="nome" class="form-control required">
+                        <label for="nome" class="form-label">Nome </label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-floating mb-3">
+                        <input type="text" name="telefone" id="telefone" class="form-control required">
+                        <label for="telefone" class="form-label">Telefone </label>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-floating mb-3">
                         <input type="text" name="endereco" id="endereco" class="form-control required">
                         <label for="endereco" class="form-label">Endereço </label>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-floating mb-3">
-                        <input type="text" name="tamanho" id="telefone" class="form-control">
-                        <label for="telefone" class="form-label">Número de Telefone </label>
                     </div>
                 </div>
                 <div class="d-grid gap-2">
