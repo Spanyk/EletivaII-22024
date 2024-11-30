@@ -15,10 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('tipo');
-            $table->text('necessidades');
-            $table->date('data_plantio');
-            $table->date('data_colheita');
-            $table->string('status');
+            $table->text('descricao');
             $table->timestamps();
         });
     }
