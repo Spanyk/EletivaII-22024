@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MoradorController;
 use App\Http\Controllers\PlantaController;
+use App\Http\Controllers\PlantioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TerrenoController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('planta', PlantaController::class);
     Route::resource('terreno', TerrenoController::class);
     Route::resource('morador', MoradorController::class);
+    Route::resource('plantio', PlantioController::class);
 });
 
 require __DIR__.'/auth.php';
