@@ -1,8 +1,7 @@
-<?php
+use<?php
 
 namespace App\Models;
-use App\Models\Planta; 
-use App\Models\Terreno; 
+use App\Models\User; 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,22 +10,13 @@ class Morador extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id',
-        'nome',
-        'localizacao',
-        'tamanho',
-        'dispobibilidade'
+        'user_id',
+        'telefone',
+        'endereco',
     ];
 
-    public function terrenos()
-    {
-        return $this->hasMany(Terreno::class);
+    public function user() {
+        return $this->belongsTo(User::class);
     }
-
-    public function plantas()
-    {
-        return $this->belongsToMany(Planta::class, 'plantio_morador')
-            ->withPivot('quantidade', 'status')
-            ->withTimestamps();
-    }
+    
 }
