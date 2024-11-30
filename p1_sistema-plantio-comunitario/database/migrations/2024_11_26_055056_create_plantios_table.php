@@ -11,9 +11,35 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
         Schema::create('plantios', function (Blueprint $table) {
             $table->id();
+            
+            $table->unsignedBigInteger('morador_id');
+            $table->foreign('morador_id')
+            ->references('id')
+            ->on("moradors")
+            ->onDelete("restrict");
+
+            $table->unsignedBigInteger('planta_id');
+            $table->foreign('planta_id')
+            ->references('id')
+            ->on('plantas')
+            ->onDelete('restrict');
+
+            $table->unsignedBigInteger('terreno_id');
+            $table->foreign('terreno_id')
+            ->references('id')
+            ->on("terrenos")
+            ->onDelete('restrict');
+
+            $table->date('data_plantio');
+            $table->date('data_colheita');
+            $table->string('status');
             $table->timestamps();
+           
+           
+           
         });
     }
 
