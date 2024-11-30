@@ -10,9 +10,15 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
-                    <h2>Adicionar um plantio</h2>
+                    {{__("Welcome to we Website")}}
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center mt-4 ">
+        <h2 class="mx-4 p-2">Adicionar Plantio</h2>
+        <div class="btn btn-success mx-2">
+            <a href="/plantio/create" class="navbar-brand"><i class="fa-solid fa-plus"></i></a>
         </div>
     </div>
 </x-app-layout>

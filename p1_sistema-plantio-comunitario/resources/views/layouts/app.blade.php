@@ -53,7 +53,7 @@
                     <a class="nav-link" href="/planta">Plantas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Moradores">Moradores</a>
+                    <a class="nav-link" href="/morador">Moradores</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
