@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('moradors', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('email')->unique();
+            $table->string('nome', 120);
             $table->string('telefone');
             $table->string('endereco');
-            $table->date('data_entrada');
-            $table->string('status');
             $table->timestamps();
+            
         });
     }
 

@@ -12,16 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('terrenos', function (Blueprint $table) {
-            $table->id();
+        $table->id();
         $table->string('localizacao');
-        $table->decimal('tamanho_m2', 8, 2);
-        $table->string('tipo_uso');
-        $table->unsignedBigInteger('morador_id');
-        $table->foreign('morador_id')->references('id')->on('moradores')->onDelete('cascade');
-        $table->string('status');
+        $table->decimal('tamanho', 8, 2);
         $table->timestamps();
-       
         });
+        
     }
 
     /**
