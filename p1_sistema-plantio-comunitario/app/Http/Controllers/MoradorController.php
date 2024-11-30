@@ -23,17 +23,8 @@ class MoradorController extends Controller
     // Armazenar um novo morador no banco de dados
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:moradores',
-            'telefone' => 'nullable|string|max:15',
-            'endereco' => 'nullable|string',
-            'data_entrada' => 'required|date',
-            'status' => 'required|string|max:50',
-        ]);
-
         Morador::create($request->all());
-        return redirect()->route('moradores.index');
+        return redirect('/morador');
     }
 
     // Exibir os detalhes de um morador

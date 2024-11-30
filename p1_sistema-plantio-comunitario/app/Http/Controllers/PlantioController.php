@@ -13,7 +13,7 @@ class PlantioController extends Controller
     // Exibir todos os plantios
     public function index()
     {
-        $plantios = Plantio::with(['morador', 'planta', 'terreno'])->get();
+        $plantios = Plantio::with('terreno')->with('planta')->with('moradores')->get();
         return view('plantios.index', compact('plantios'));
     }
 
@@ -23,7 +23,7 @@ class PlantioController extends Controller
         $moradores = Morador::all();
         $plantas = Planta::all();
         $terrenos = Terreno::all();
-        return view('plantios.create', compact('moradores', 'plantas', 'terrenos'));
+        return view('plantios.create', compact(['moradores', 'plantas', 'terrenos']));
     }
 
     // Armazenar um novo plantio no banco de dados
