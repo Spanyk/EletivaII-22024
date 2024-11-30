@@ -1,19 +1,21 @@
-@extends('layouts.app')
-
-@section('content')
-
-    <div class="row">
+<x-app-layout>
+    <div class="row d-flex justify-content-center">
         <div class="col-md-12">
-            <h2 class="mb-4">Terrenos Cadastrados</h2>
+            <div class="d-flex align-items-center mb-2">
+                <h2 class="mx-4">Gerenciar Terrenos</h2>
+                <div class="btn btn-success mx-2">
+                    <a href="/terreno/create" class="navbar-brand"><i class="fa-solid fa-plus"></i></a>
+                </div>
+                
+            </div>
+            
             <div class="table-responsive">
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
                             <th>#</th>
-                            <th>Nome</th>
                             <th>Localização</th>
                             <th>Tamanho</th>
-                            <th>Disponibilidade</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -21,18 +23,13 @@
                         @foreach ($terrenos as $terreno)
                             <tr>
                                 <td>{{ $terreno->id }}</td>
-                                <td>{{ $terreno->nome }}</td>
                                 <td>{{ $terreno->localizacao }}</td>
                                 <td>{{ $terreno->tamanho }}</td>
-                                <td>{{ $terreno->dispobibilidade }}</td>
                                 <td>
-                                    <a href="{{ route('terreno.show', $terreno->id) }}" class="btn btn-sm btn-info">
-                                        <i class="fa-solid fa-eye"></i> 
-                                    </a>
-                                    <a href="{{ route('terreno.edit', $terreno->id) }}" class="btn btn-sm btn-warning">
+                                    <a href="/terreno/{{$terreno->id }}/edit" class="btn btn-sm btn-warning">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
-                                    <a href="{{ route('terreno.delete', $terreno->id) }}" class="btn btn-sm btn-danger">
+                                    <a href="/terreno/{{$terreno->id}}" class="btn btn-sm btn-danger">
                                     <i class="fa-solid fa-trash"></i>
                                     </a>
                                 </td>
@@ -43,4 +40,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-app-layout>
